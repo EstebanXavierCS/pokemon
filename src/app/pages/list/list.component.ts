@@ -21,9 +21,8 @@ export class ListComponent {
       }
     });
   }
-
   loadPokemons(id: string): void {
-    this.pokemonService.getPokemon2(id).subscribe((data: any) => {
+    this.pokemonService.getPokemon(id).subscribe((data: any) => {
       this.pokemons = data.pokemon_entries;
       this.pokemons.forEach(pokemonEntry => {
         this.pokemonService.getPokemonByName(pokemonEntry.pokemon_species.name)

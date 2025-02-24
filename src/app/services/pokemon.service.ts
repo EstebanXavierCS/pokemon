@@ -8,12 +8,7 @@ export class PokemonService {
 
   constructor(private http:HttpClient) { }
 
-  //Función que hace la petición a la API externa
-  getPokemon () {
-    return this.http.get('https://pokeapi.co/api/v2/pokedex/2/');
-  }
-
-  getPokemon2 (id: string) {
+  getPokemon (id: string) {
     return this.http.get(`https://pokeapi.co/api/v2/pokedex/${id}`);
   }
 
