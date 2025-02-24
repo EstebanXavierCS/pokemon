@@ -1,0 +1,15 @@
+<div class="titulo-container" >
+    <h3 style=" color: rgb(255, 64, 0)">Pokemon</h3>
+</div>
+<ul class="list-group">
+    @for (pokemon of pokemons; track pokemon.entry_number) {
+    <li class="list-group-item">
+        <h5>{{ pokemon.entry_number }}</h5>
+        <img [src]="pokemon.sprite" alt="{{ pokemon.pokemon_species.name }}">
+        <p>{{ pokemon.pokemon_species.name }}</p>
+        <a [routerLink]="['/pokemon', pokemon.pokemon_species.name]" class="btn btn-primary">
+            Ver detalles
+        </a>
+    </li>
+    }
+</ul>

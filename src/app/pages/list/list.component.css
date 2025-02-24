@@ -1,0 +1,99 @@
+.titulo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+/* Distribuye en varias columnas */
+.list-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Se adapta al ancho */
+    gap: 15px;
+    padding: 20px;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.list-group-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.list-group-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.list-group-item h5 {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff5733;
+}
+
+.list-group-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    background: #ff5733;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #c70039;
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 1024px) {
+    .list-group {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Ajusta el tamaño en tabletas */
+    }
+}
+
+@media (max-width: 768px) {
+    .list-group {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Ajusta en móviles */
+        padding: 10px;
+    }
+
+    .list-group-item {
+        padding: 8px;
+    }
+
+    .list-group-item img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .list-group {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Muestra más Pokémon en móviles */
+    }
+
+    .list-group-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
